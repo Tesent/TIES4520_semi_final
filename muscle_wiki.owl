@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/riku.laitinen/ontologies/2025/10/muscle_wiki"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/riku.laitinen/ontologies/2025/10/muscle_wiki">
+    <Prefix name="" IRI="http://www.semanticweb.org/riku.laitinen/ontologies/2025/10/muscle_wiki/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Abdominals"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Article"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Body_Fat_Loss"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calorie_Calculator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Difficulties"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Difficulty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Directory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Equipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EquipmentType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exercise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hands"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Legs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Muscle_Gain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Muscles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nutrition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tools"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Video"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeightedEquipmentExercise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Workouts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasArticle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDifficulty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEquipment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcercise"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMuscle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrimaryMuscle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEquipmentUsedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Calories"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Difficulty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Duration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Repetitions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#RestTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Weight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Barbell"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dumbbell"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Novice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Push_Up"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BodyUnsupportedExercise"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BodyUnsupportedExercise"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Exercise"/>
+            <ObjectComplementOf>
+                <Class IRI="#WeightedEquipmentExercise"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Difficulties"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Novice"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EquipmentType"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Barbell"/>
+            <NamedIndividual IRI="#Dumbbell"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Exercise"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasDifficulty"/>
+            <Class IRI="#Difficulties"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LowerBody"/>
+        <ObjectUnionOf>
+            <Class IRI="#Abdominals"/>
+            <Class IRI="#Legs"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UpperBody"/>
+        <ObjectUnionOf>
+            <Class IRI="#Chest"/>
+            <Class IRI="#Hands"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WeightedEquipmentExercise"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Equipment"/>
+            <Class IRI="#Exercise"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Abdominals"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Body_Fat_Loss"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calorie_Calculator"/>
+        <Class IRI="#Tools"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chest"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Difficulties"/>
+        <Class IRI="#Directory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Difficulty"/>
+        <Class IRI="#Exercise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipmentType"/>
+        <Class IRI="#Directory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hands"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Legs"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerBody"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Muscle_Gain"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Muscles"/>
+        <Class IRI="#Directory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nutrition"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperBody"/>
+        <Class IRI="#Muscles"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Video"/>
+        <Class IRI="#Directory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WeightedEquipmentExercise"/>
+        <Class IRI="#Exercise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workouts"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Equipment"/>
+        <NamedIndividual IRI="#Barbell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Exercise"/>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Equipment"/>
+        <NamedIndividual IRI="#Dumbbell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Exercise"/>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Difficulty"/>
+        <NamedIndividual IRI="#Novice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Exercise"/>
+        <NamedIndividual IRI="#Push_Up"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+        <NamedIndividual IRI="#Barbell"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <NamedIndividual IRI="#Chest"/>
+        <NamedIndividual IRI="#Barbell"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <NamedIndividual IRI="#Chest"/>
+        <NamedIndividual IRI="#Dumbbell"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExcercise"/>
+        <NamedIndividual IRI="#Chest"/>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMuscle"/>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+        <NamedIndividual IRI="#Chest"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Weight"/>
+        <NamedIndividual IRI="#Barbell"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Repetitions"/>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Weight"/>
+        <NamedIndividual IRI="#Barbell_Bench_Press"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Weight"/>
+        <NamedIndividual IRI="#Dumbbell"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Repetitions"/>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Weight"/>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Difficulty"/>
+        <NamedIndividual IRI="#Novice"/>
+        <Literal>Novice</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Repetitions"/>
+        <NamedIndividual IRI="#Push_Up"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <ObjectProperty IRI="#isEquipmentUsedBy"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPrimaryMuscle"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isEquipmentUsedBy"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifficulty"/>
+        <Class IRI="#Exercise"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <Class IRI="#Exercise"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMuscle"/>
+        <Class IRI="#Exercise"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasArticle"/>
+        <Class IRI="#Article"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifficulty"/>
+        <Class IRI="#Difficulty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasExcercise"/>
+        <Class IRI="#Exercise"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Calories"/>
+        <Class IRI="#Calorie_Calculator"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Description"/>
+        <Class IRI="#Article"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Difficulty"/>
+        <Class IRI="#Difficulty"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Duration"/>
+        <Class IRI="#Exercise"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Repetitions"/>
+        <Class IRI="#Exercise"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#RestTime"/>
+        <Class IRI="#Exercise"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Weight"/>
+        <Class IRI="#Equipment"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Calories"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Difficulty"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Duration"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Repetitions"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#RestTime"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Weight"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
