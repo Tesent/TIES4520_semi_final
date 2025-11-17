@@ -1,0 +1,66 @@
+@prefix mw: <https://github.com/Tesent/TIES4520_semi_final/blob/main/muscle_wiki.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+mw:Barbell a mw:Equipment .
+mw:Barbell mw:Weight "60" .
+
+mw:Barbell_Bench_Press a mw:Exercise .
+mw:Barbell_Bench_Press mw:hasEquipment mw:Barbell .
+mw:Barbell_Bench_Press mw:Repetitions "12" .
+mw:Barbell_Bench_Press mw:Weight "60" .
+
+mw:Chest a rdf:type .
+mw:Chest mw:hasEquipment mw:Barbell .
+mw:Chest mw:hasEquipment mw:Dumbbell .
+mw:Chest mw:hasExcercise mw:Barbell_Bench_Press .
+
+mw:Dumbbell a mw:Equipment .
+mw:Dumbbell mw:Weight "20" .
+
+mw:Dumbbell_Incline_Bench_Press a mw:Exercise .
+mw:Dumbbell_Incline_Bench_Press mw:hasMuscle mw:Chest .
+mw:Dumbbell_Incline_Bench_Press mw:Repetitions "12" .
+mw:Dumbbell_Incline_Bench_Press mw:Weight "20" .
+
+mw:Novice a mw:Difficulty .
+mw:Novice mw:Difficulty "Novice" .
+
+mw:Push_Up a mw:Exercise .
+mw:Push_Up mw:Repetitions "12" .
+
+
+mw:Latissimus_Dorsi a mw:Muscles ;
+    rdfs:label "Latissimus Dorsi" ;
+    rdfs:comment "A large back muscle targeted in pulling exercises." .
+
+mw:Advanced a mw:Difficulty ;
+    rdfs:label "Advanced Difficulty Level" ;
+    rdfs:comment "Suitable for individuals with high training experience." ;
+    mw:Difficulty "Advanced" .
+
+mw:Pull_Up a mw:Excersice ;
+    rdfs:label "Pull-Up" ;
+    rdfs:comment "A bodyweight exercise targeting the back muscles" ;
+    mw:hasMuscle mw:Latissimus_Dorsi ;
+    mw:hasDifficulty mw:Advanced ;
+    mw:Repetitions "8" .
+
+
+
+{ ?ex mw:hasEquipment mw:Barbell }
+=> { ?ex mw:exerciseType "Barbell exercise" } .
+
+{ ?ex mw:hasDifficulty mw:Novice }
+=> { ?ex mw:intensityLevel "Novice" } .
+
+{ ?ex mw:hasMuscle mw:Chest; mw:hasMuscle mw:Triceps }
+=> { ?ex mw:exerciseType "Compound exercise" } .
+
+{ ?ex mw:hasEquipment mw:Dumbbell }
+=> { ?ex mw:exerciseType "Dumbbell exercise" } .
+
+{ ?ex rdf:type mw:Exercise ;
+      mw:hasName "Pushup" }
+=> { ?ex mw:exerciseType "Bodyweight exercise" }.
