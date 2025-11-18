@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://github.com/Tesent/TIES4520_semi_final/blob/main/muscle_wiki.owl"
+     xml:base="https://raw.githubusercontent.com/Tesent/TIES4520_semi_final/main/muscle_wiki.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/Tesent/TIES4520_semi_final/blob/main/muscle_wiki.owl">
-    <Prefix name="" IRI="https://github.com/Tesent/TIES4520_semi_final/blob/main/muscle_wiki.owl/"/>
+     ontologyIRI="https://raw.githubusercontent.com/Tesent/TIES4520_semi_final/main/muscle_wiki.owl">
+    <Prefix name="" IRI="https://raw.githubusercontent.com/Tesent/TIES4520_semi_final/main/muscle_wiki.owl/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -17,6 +17,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Article"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BodyUnsupportedExercise"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Body_Fat_Loss"/>
@@ -88,7 +91,7 @@
         <ObjectProperty IRI="#hasEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasExcercise"/>
+        <ObjectProperty IRI="#hasExercise"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasMuscle"/>
@@ -112,6 +115,9 @@
         <DataProperty IRI="#Duration"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#ExerciseType"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Repetitions"/>
     </Declaration>
     <Declaration>
@@ -119,6 +125,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Weight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Barbell"/>
@@ -142,7 +151,7 @@
         <NamedIndividual IRI="#Push_Up"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BodyUnsupportedExercise"/>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#BodyUnsupportedExercise"/>
@@ -292,19 +301,9 @@
         <NamedIndividual IRI="#Barbell"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasEquipment"/>
-        <NamedIndividual IRI="#Chest"/>
-        <NamedIndividual IRI="#Barbell"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasEquipment"/>
-        <NamedIndividual IRI="#Chest"/>
-        <NamedIndividual IRI="#Dumbbell"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasExcercise"/>
-        <NamedIndividual IRI="#Chest"/>
+        <ObjectProperty IRI="#hasMuscle"/>
         <NamedIndividual IRI="#Barbell_Bench_Press"/>
+        <NamedIndividual IRI="#Chest"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasMuscle"/>
@@ -386,7 +385,7 @@
         <Class IRI="#Equipment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasExcercise"/>
+        <ObjectProperty IRI="#hasExercise"/>
         <Class IRI="#Exercise"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
@@ -403,6 +402,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Duration"/>
+        <Class IRI="#Exercise"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ExerciseType"/>
         <Class IRI="#Exercise"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -434,6 +437,10 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#ExerciseType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#Repetitions"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
@@ -445,6 +452,38 @@
         <DataProperty IRI="#Weight"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasEquipment"/>
+                <Variable IRI="/ex"/>
+                <NamedIndividual IRI="#Barbell"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#ExerciseType"/>
+                <Variable IRI="/ex"/>
+                <Literal>Barbell exercise</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
 </Ontology>
 
 
