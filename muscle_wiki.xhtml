@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:mw="https://raw.githubusercontent.com/Tesent/TIES4520_semi_final/main/muscle_wiki.owl#">
+<head>
+  <meta charset="UTF-8" />
+  <title>Muscle Wiki</title>
+</head>
+<body>
+
+  <h1 property="mw:hasName">Muscle Wiki</h1>
+  <p property="mw:hasName">A reference for exercises, muscles, equipment, and difficulty levels.</p>
+
+  <h2 property="mw:hasName">Exercises</h2>
+  <table>
+    <tr>
+      <th>Exercise</th>
+      <th>Muscles Targeted</th>
+      <th>Equipment</th>
+      <th>Repetitions</th>
+      <th>Weight (kg)</th>
+      <th>Difficulty</th>
+    </tr>
+    <tr about="mw:Barbell_Bench_Press" typeof="mw:Exercise">
+      <td property="mw:hasName">Barbell Bench Press</td>
+      <td resource="mw:Chest" property="mw:hasMuscle">Chest</td>
+      <td resource="mw:Barbell" property="mw:hasEquipment">Barbell</td>
+      <td property="mw:Repetitions">12</td>
+      <td property="mw:Weight">60</td>
+      <td resource="mw:Advanced" property="mw:hasDifficulty">Advanced Difficulty Level</td>
+    </tr>
+    <tr about="mw:Dumbbell_Incline_Bench_Press" typeof="mw:Exercise">
+      <td property="mw:hasName">Dumbbell Incline Bench Press</td>
+      <td resource="mw:Chest" property="mw:hasMuscle">Chest</td>
+      <td resource="mw:Dumbbell" property="mw:hasEquipment">Dumbbell</td>
+      <td property="mw:Repetitions">12</td>
+      <td property="mw:Weight">20</td>
+      <td resource="mw:Advanced" property="mw:hasDifficulty">Advanced Difficulty Level</td>
+    </tr>
+    <tr about="mw:Push_Up" typeof="mw:Exercise">
+      <td property="mw:hasName">Push Up</td>
+      <td resource="mw:Chest" property="mw:hasMuscle">Chest</td>
+      <td property="mw:hasEquipment">—</td>
+      <td property="mw:Repetitions">12</td>
+      <td property="mw:Weight">—</td>
+      <td resource="mw:Novice" property="mw:hasDifficulty">Novice Difficulty Level</td>
+    </tr>
+    <tr about="mw:Pull_Up" typeof="mw:Exercise">
+      <td property="mw:hasName">Pull Up</td>
+      <td resource="mw:Lats" property="mw:hasMuscle">Latissimus Dorsi</td>
+      <td resource="mw:Pull_Up_Bar" property="mw:hasEquipment">Push-Up Bar</td>
+      <td property="mw:Repetitions">8</td>
+      <td property="mw:Weight">—</td>
+      <td resource="mw:Advanced" property="mw:hasDifficulty">Advanced Difficulty Level</td>
+    </tr>
+  </table>
+
+  <h2 property="mw:hasName">Muscles</h2>
+  <table>
+    <tr>
+      <th>Muscle</th>
+      <th>Description</th>
+    </tr>
+    <tr about="mw:Chest" typeof="mw:Muscles">
+      <td property="mw:hasName">Chest</td>
+      <td property="rdfs:comment">A large muscle group in the front of the torso, targeted in pushing exercises.</td>
+    </tr>
+    <tr about="mw:Lats" typeof="mw:Muscles">
+      <td property="mw:hasName">Latissimus Dorsi</td>
+      <td property="rdfs:comment">A large back muscle targeted in pulling exercises.</td>
+    </tr>
+  </table>
+
+  <h2 property="mw:hasName">Equipment</h2>
+  <table>
+    <tr>
+      <th>Equipment</th>
+      <th>Weight (kg)</th>
+    </tr>
+    <tr about="mw:Barbell" typeof="mw:Equipment">
+      <td property="mw:hasName">Barbell</td>
+      <td property="mw:Weight">60</td>
+    </tr>
+    <tr about="mw:Dumbbell" typeof="mw:Equipment">
+      <td property="mw:hasName">Dumbbell</td>
+      <td property="mw:Weight">20</td>
+    </tr>
+    <tr about="mw:Pull_Up_Bar" typeof="mw:Equipment">
+      <td property="mw:hasName">Push-Up Bar</td>
+      <td property="mw:Weight">—</td>
+    </tr>
+  </table>
+
+  <h2 property="mw:hasName">Difficulty Levels</h2>
+  <table>
+    <tr>
+      <th>Level</th>
+      <th>Description</th>
+    </tr>
+    <tr about="mw:Novice" typeof="mw:Difficulty">
+      <td property="mw:hasName">Novice Difficulty Level</td>
+      <td property="rdfs:comment">Suitable for beginners with little or no experience.</td>
+    </tr>
+    <tr about="mw:Advanced" typeof="mw:Difficulty">
+      <td property="mw:hasName">Advanced Difficulty Level</td>
+      <td property="rdfs:comment">Suitable for individuals with high training experience.</td>
+    </tr>
+  </table>
+
+</body>
+</html>
