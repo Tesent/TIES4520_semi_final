@@ -3,45 +3,57 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-mw:Barbell a mw:Equipment .
-mw:Barbell mw:Weight "60" .
+mw:Barbell a mw:Equipment ;
+    mw:Weight "60" ;
+    mw:hasName "Barbell" .
 
-mw:Barbell_Bench_Press a mw:Exercise .
-mw:Barbell_Bench_Press mw:hasEquipment mw:Barbell .
-mw:Barbell_Bench_Press mw:Repetitions "12" .
-mw:Barbell_Bench_Press mw:Weight "60" .
+mw:Dumbbell a mw:Equipment ;
+    mw:Weight "20" ;
+    mw:hasName "Dumbbell" .
 
-mw:Chest a .
-mw:Chest mw:hasEquipment mw:Barbell .
-mw:Chest mw:hasEquipment mw:Dumbbell .
-mw:Chest mw:hasExercise mw:Barbell_Bench_Press .
-
-mw:Dumbbell a mw:Equipment .
-mw:Dumbbell mw:Weight "20" .
-
-mw:Pull_Up_Bar a mw:Equipment .
-
-mw:Dumbbell_Incline_Bench_Press a mw:Exercise .
-mw:Dumbbell_Incline_Bench_Press mw:hasMuscle mw:Chest .
-mw:Dumbbell_Incline_Bench_Press mw:Repetitions "12" .
-mw:Dumbbell_Incline_Bench_Press mw:Weight "20" .
-mw:Dumbbell_Incline_Bench_Press mw:hasEquipment mw:Dumbbell .
-
-mw:Novice a mw:Difficulty .
-mw:Novice mw:Difficulty "Novice" .
-
-mw:Push_Up a mw:Exercise .
-mw:Push_Up mw:Repetitions "12" .
-
+mw:Pull_Up_Bar a mw:Equipment ;
+    mw:hasName "Pull-Up Bar" .
 
 mw:Lats a mw:Muscles ;
-    rdfs:label "Latissimus Dorsi" ;
+    mw:hasName "Latissimus Dorsi" ;
     rdfs:comment "A large back muscle targeted in pulling exercises." .
 
+mw:Chest a mw:Muscles ;
+    mw:hasName "Chest" ;
+    rdfs:comment "A large muscle group in the front of the torso, targeted in pushing exercises." .
+
+mw:Novice a mw:Difficulty ;
+    mw:hasName "Novice Difficulty Level" ;
+    rdfs:comment "Suitable for beginners with little or no experience." ;
+    mw:Difficulty "Novice" .
+
 mw:Advanced a mw:Difficulty ;
-    rdfs:label "Advanced Difficulty Level" ;
+    mw:hasName "Advanced Difficulty Level" ;
     rdfs:comment "Suitable for individuals with high training experience." ;
     mw:Difficulty "Advanced" .
+
+
+mw:Barbell_Bench_Press a mw:Exercise;
+    mw:hasEquipment mw:Barbell ;
+    mw:Repetitions "12" ;
+    mw:Weight "60" ;
+    mw:hasDifficulty mw:Advanced ;
+    mw:hasMuscle mw:Chest ;
+    mw:hasName "Barbell Bench Press" .
+
+mw:Dumbbell_Incline_Bench_Press a mw:Exercise ;
+    mw:hasMuscle mw:Chest ;
+    mw:Repetitions "12" ;
+    mw:Weight "20" ;
+    mw:hasEquipment mw:Dumbbell ;
+    mw:hasDifficulty mw:Advanced ;
+    mw:hasName "Dumbbell Incline Bench Press" .
+
+mw:Push_Up a mw:Exercise ;
+    mw:Repetitions "12" ;
+    mw:hasMuscle mw:Chest ;
+    mw:hasDifficulty mw:Novice ;
+    mw:hasName "Push Up" .
 
 mw:Pull_Up a mw:Exercise ;
     rdfs:label "Pull-Up" ;
@@ -49,4 +61,5 @@ mw:Pull_Up a mw:Exercise ;
     mw:hasMuscle mw:Lats ;
     mw:hasDifficulty mw:Advanced ;
     mw:Repetitions "8" ;
-    mw:hasEquipment mw:Pull_Up_Bar .
+    mw:hasEquipment mw:Pull_Up_Bar ;
+    mw:hasName "Pull Up" .

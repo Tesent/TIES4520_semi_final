@@ -127,9 +127,6 @@
         <DataProperty IRI="#Weight"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasName"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Barbell"/>
     </Declaration>
     <Declaration>
@@ -276,24 +273,12 @@
         <NamedIndividual IRI="#Barbell"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Exercise"/>
-        <NamedIndividual IRI="#Barbell_Bench_Press"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Equipment"/>
         <NamedIndividual IRI="#Dumbbell"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Exercise"/>
-        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Difficulty"/>
         <NamedIndividual IRI="#Novice"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Exercise"/>
-        <NamedIndividual IRI="#Push_Up"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasEquipment"/>
@@ -304,6 +289,11 @@
         <ObjectProperty IRI="#hasMuscle"/>
         <NamedIndividual IRI="#Barbell_Bench_Press"/>
         <NamedIndividual IRI="#Chest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEquipment"/>
+        <NamedIndividual IRI="#Dumbbell_Incline_Bench_Press"/>
+        <NamedIndividual IRI="#Dumbbell"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasMuscle"/>
@@ -452,10 +442,6 @@
         <DataProperty IRI="#Weight"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <DLSafeRule>
         <Annotation>
             <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
@@ -470,16 +456,20 @@
             <Literal>S1</Literal>
         </Annotation>
         <Body>
+            <ClassAtom>
+                <Class IRI="#WeightedEquipmentExercise"/>
+                <Variable IRI="urn:swrl:var#ex"/>
+            </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#hasEquipment"/>
-                <Variable IRI="/ex"/>
+                <Variable IRI="urn:swrl:var#ex"/>
                 <NamedIndividual IRI="#Barbell"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <DataPropertyAtom>
                 <DataProperty IRI="#ExerciseType"/>
-                <Variable IRI="/ex"/>
+                <Variable IRI="urn:swrl:var#ex"/>
                 <Literal>Barbell exercise</Literal>
             </DataPropertyAtom>
         </Head>
