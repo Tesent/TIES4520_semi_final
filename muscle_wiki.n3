@@ -3,18 +3,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
 { ?ex mw:hasEquipment mw:Barbell }
 => { ?ex mw:ExerciseType "Barbell exercise" } .
 
 { ?ex mw:hasDifficulty mw:Novice }
 => { ?ex mw:intensityLevel "Novice" } .
 
-{ ?ex mw:hasMuscle mw:Chest; mw:hasMuscle mw:Triceps }
+{ ?ex mw:hasMuscle mw:Chest;}
 => { ?ex mw:ExerciseType "Compound exercise" } .
 
 { ?ex mw:hasEquipment mw:Dumbbell }
 => { ?ex mw:ExerciseType "Dumbbell exercise" } .
 
 { ?ex rdf:type mw:Exercise ;
-      mw:hasName "Pushup" }
+      mw:hasName "Push Up" }
 => { ?ex mw:ExerciseType "Bodyweight exercise" }.
